@@ -67,12 +67,12 @@ CREATE TABLE PetImages (
     FOREIGN KEY (pet_id) REFERENCES Pets(pet_id)
 );
 
--- Indexes (for performance)
+-- Indexes 
 CREATE INDEX idx_pet_type ON Pets(type_id);
 CREATE INDEX idx_pet_status ON Pets(status);
 CREATE INDEX idx_pet_shelter ON Pets(shelter_id);
 
--- Sample Data (optional but useful)
+
 
 INSERT INTO PetTypes (type_name)
 VALUES ('Dog'), ('Cat'), ('Bird'), ('Rabbit');
