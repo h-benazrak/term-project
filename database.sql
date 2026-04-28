@@ -1,4 +1,6 @@
-
+-- Create and use database
+DROP DATABASE IF EXISTS pet_adoption;
+CREATE DATABASE pet_adoption;
 USE pet_adoption;
 
 -- Users
@@ -26,7 +28,7 @@ CREATE TABLE PetTypes (
 );
 
 -- Pets
- CREATE TABLE Pets (
+CREATE TABLE Pets (
     pet_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     type_id INT,
@@ -43,7 +45,7 @@ CREATE TABLE PetTypes (
 );
 
 -- Applications
- CREATE TABLE Applications (
+CREATE TABLE Applications (
     application_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     pet_id INT,
@@ -65,7 +67,27 @@ CREATE TABLE PetImages (
     FOREIGN KEY (pet_id) REFERENCES Pets(pet_id)
 );
 
-
+-- Indexes (for performance)
 CREATE INDEX idx_pet_type ON Pets(type_id);
 CREATE INDEX idx_pet_status ON Pets(status);
-CREATE INDEX idx_pet_shelter ON Pets(shelter_id); 
+CREATE INDEX idx_pet_shelter ON Pets(shelter_id);
+
+-- Sample Data (optional but useful)
+
+INSERT INTO PetTypes (type_name)
+VALUES ('Dog'), ('Cat'), ('Bird'), ('Rabbit');
+
+INSERT INTO Shelters (name, location, contact_email)
+VALUES 
+('Happy Pets Shelter', 'Nicosia', 'happy@shelter.com'),
+('Hope Shelter', 'Limassol', 'hope@shelter.com');
+
+INSERT INTO Users (name, email, password, role)
+VALUES 
+('Hasnaa', 'hasnaa@email.com', '1234', 'adopter'),
+('Ali', 'ali@email.com', '1234', 'adopter');
+
+INSERT INTO Pets (name, type_id, breed, age, gender, description, shelter_id)
+VALUES 
+('Max', 1, 'Labrador', 2, 'male', 'Friendly dog', 1),
+('Bella', 2, 'Persian', 3, 'female', 'Calm cat', 2);
