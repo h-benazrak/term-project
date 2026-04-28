@@ -59,3 +59,15 @@ CREATE TABLE PetImages (
 
     FOREIGN KEY (pet_id) REFERENCES Pets(pet_id)
 );
+
+ALTER TABLE Pets
+ADD COLUMN description TEXT,
+ADD COLUMN gender ENUM('male','female'),
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Applications
+ADD COLUMN message TEXT,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+CREATE INDEX idx_pet_type ON Pets(type_id);
+CREATE INDEX idx_pet_status ON Pets(status);
