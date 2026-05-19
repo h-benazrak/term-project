@@ -1,0 +1,62 @@
+/* Custom Styles */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+    background-color: #667eea;
+    border-color: #667eea;
+}
+
+.btn-primary:hover {
+    background-color: #5a67d8;
+    border-color: #5a67d8;
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+    
+    .hero-section h1 {
+        font-size: 28px;
+    }
+}
+
+/* Table styles */
+.table th {
+    width: 30%;
+}
+
+/* Badge styles */
+.badge {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* Alert styles */
+.alert {
+    border-radius: 10px;
+}
